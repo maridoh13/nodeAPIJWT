@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 
 // Import routes
 const authRoute = require('./routes/auth');
-
+const postRoute = require('./routes/posts');
 
 dotenv.config();
 
@@ -21,6 +21,7 @@ mongoose.connect(
 app.use(express.json());
 // Route middleware
 app.use('/api/user', authRoute);
+app.use('/api/posts', postRoute);
 
 
 
